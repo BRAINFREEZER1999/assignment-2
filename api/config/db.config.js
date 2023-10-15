@@ -1,3 +1,6 @@
+const DATABASE_URL = process.env.DATABASE_URL || '';
+const [_, username, password, host, port, dbname] = DATABASE_URL.match(/postgres:\/\/(.*):(.*?)@(.*?):(.*?)\/(.*)/) || [];
+
 module.exports = {
     HOST: "db",
     USER: "postgres",
