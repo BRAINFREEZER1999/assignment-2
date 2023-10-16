@@ -5,7 +5,7 @@ function ContactList() {
     const [contacts, setContacts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/contacts')
+        fetch('http://localhost:5000/api/contacts')
             .then(response => response.json())
             .then(data => setContacts(data))
             .catch(error => console.error('Error fetching contacts:', error));
