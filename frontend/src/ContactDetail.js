@@ -1,33 +1,28 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-function ContactDetail({ match }) {
-    const [contact, setContact] = useState({});
-    const [phones, setPhones] = useState([]);
+function ContactList() {
+    const [contacts, setContacts] = useState([]);
 
     useEffect(() => {
-        const fetchContact = async () => {
-            let response = await fetch(`/api/contacts/${match.params.contactId}`);
-            let data = await response.json();
-            setContact(data);
-            
-            response = await fetch(`/api/contacts/${match.params.contactId}/phones`);
-            data = await response.json();
-            setPhones(data);
-        };
-
-        fetchContact();
-    }, [match.params.contactId]);
+        fetch('http://localhost:5000/contacts')
+            .then(response => response.json())
+            .then(data => setContacts(data))
+            .catch(error => console.error('Error fetching contacts:', error));
+    }, []);
 
     return (
         <div>
-            <h2>{contact.name}</h2>
+            <h1>Contacts</h1>
             <ul>
-                {phones.map(phone => (
-                    <li key={phone.id}>{phone.name}: {phone.number}</li>
+                {contacts.map(contact => (
+                    <li key={contact.id}>
+                        <Link to={`/contact/${contact.id}`}>{contact.name}</Link>
+                    </li>
                 ))}
             </ul>
         </div>
     );
 }
 
-export default ContactDetail;
+export default ContactList;
