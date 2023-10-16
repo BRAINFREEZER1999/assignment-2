@@ -1,18 +1,19 @@
 
 
 
-
-import React from 'react'; // Ensure you import React
-import { useState, useEffect } from 'react';  
-import './App.css';
-import ContactList from './ContactList';  // import ContactList component
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import ContactList from './ContactList';
+import ContactDetail from './ContactDetail';
 
 function App() {
     return (
-        <div>     
-            <h1>Contactor</h1>
-            <ContactList />   // include the ContactList component here
-        </div>
+        <Router>
+            <div className="App">
+                <Route path="/" exact component={ContactList} />
+                <Route path="/contact/:contactId" component={ContactDetail} />
+            </div>
+        </Router>
     );
 }
 
