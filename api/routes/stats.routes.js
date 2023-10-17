@@ -3,7 +3,7 @@ module.exports = app => {
   
     var router = require("express").Router();
   
-    router.get("/stats", stats.calculate);
+    router.get("/", stats.stats);
   
-    app.use('/api', router);
+    app.use('/api/stats', router);
 };
