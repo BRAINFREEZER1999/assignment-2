@@ -79,4 +79,5 @@ function ContactDetail({ match }) {
     );
 }
 
-export default ContactDetail;
+
+
