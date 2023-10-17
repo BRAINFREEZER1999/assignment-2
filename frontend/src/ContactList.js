@@ -69,3 +69,18 @@ function ContactList() {
 export default ContactList;
 
 
+return (
+    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+        <h1 style={{ borderBottom: '2px solid #ccc', paddingBottom: '10px' }}>Contacts</h1>
+        <ul style={{ listStyleType: 'none', paddingLeft: '0' }}>
+            {contacts.map(contact => (
+                <li key={contact.id} style={{ padding: '10px 0' }}>
+                    <Link to={`/contact/${contact.id}`} style={{ textDecoration: 'none', color: '#333' }}>
+                        {contact.name}
+                    </Link>
+                </li>
+            ))}
+        </ul>
+    </div>
+);
+
