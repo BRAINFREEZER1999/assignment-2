@@ -44,8 +44,8 @@ function ContactList() {
     }
 
     return (
-        <div>
-            <h1>Contacts</h1>
+        <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+            <h1 style={{ borderBottom: '2px solid #ccc', paddingBottom: '10px' }}>Contacts</h1>
             <div>
                 <input 
                     value={newContactName} 
@@ -54,11 +54,13 @@ function ContactList() {
                 />
                 <button onClick={createContact}>Create</button>
             </div>
-            <ul>
+            <ul style={{ listStyleType: 'none', paddingLeft: '0' }}>
                 {contacts.map(contact => (
-                    <li key={contact.id}>
-                        <Link to={`/contact/${contact.id}`}>{contact.name}</Link>
-                        <button onClick={() => deleteContact(contact.id)}>Delete</button>
+                    <li key={contact.id} style={{ padding: '10px 0', borderBottom: '1px solid #e1e1e1' }}>
+                        <Link to={`/contact/${contact.id}`} style={{ textDecoration: 'none', color: '#333' }}>
+                            {contact.name}
+                        </Link>
+                        <button onClick={() => deleteContact(contact.id)} style={{ marginLeft: '20px' }}>Delete</button>
                     </li>
                 ))}
             </ul>
@@ -67,20 +69,3 @@ function ContactList() {
 }
 
 export default ContactList;
-
-
-return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-        <h1 style={{ borderBottom: '2px solid #ccc', paddingBottom: '10px' }}>Contacts</h1>
-        <ul style={{ listStyleType: 'none', paddingLeft: '0' }}>
-            {contacts.map(contact => (
-                <li key={contact.id} style={{ padding: '10px 0' }}>
-                    <Link to={`/contact/${contact.id}`} style={{ textDecoration: 'none', color: '#333' }}>
-                        {contact.name}
-                    </Link>
-                </li>
-            ))}
-        </ul>
-    </div>
-);
-
