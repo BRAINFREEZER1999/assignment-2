@@ -11,4 +11,12 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.contacts = require("./contact
+// Import the models
+db.contacts = require("./contact.model.js")(sequelize, Sequelize);
+db.phones = require("./phone.model.js")(sequelize, Sequelize);
+
+// Set up the associations
+db.contacts.associate(db);
+db.phones.associate(db);
+
+module.exports = db;
