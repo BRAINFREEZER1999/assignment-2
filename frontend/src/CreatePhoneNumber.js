@@ -18,7 +18,7 @@ function CreatePhoneNumber() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ number }),
             });
-            setNumber('');  // Clear the input
+            setNumber(''); 
         } catch (error) {
             console.error('Failed to add phone number:', error);
         }
