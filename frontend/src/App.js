@@ -11,6 +11,7 @@ function App() {
         <Router>
             <div className="App">
                 <Switch>
+                    <Statistics />
                     <Route path="/" exact component={ContactList} />
                     <Route path="/contact/:contactId" component={ContactDetail} />
                     <Route path="/add-contact" component={AddContact} /> // New route
