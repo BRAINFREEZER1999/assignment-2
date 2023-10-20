@@ -4,6 +4,7 @@ import ContactList from './ContactList';
 import ContactDetail from './ContactDetail';
 import AddContact from './AddContact'; // Import this
 import AddPhoneNumber from './AddPhoneNumber'; // And this
+import Statistics from './components/Statistics';
 
 function App() {
     return (
