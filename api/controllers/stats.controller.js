@@ -3,16 +3,12 @@ const Contact = db.contacts;
 const Phone = db.phones;
 
 exports.stats = (req, res) => {
-    // Get total number of contacts
     const contactCount = Contact.count();
 
-    // Get total number of phone numbers
     const phoneCount = Phone.count();
 
-    // Get the creation time of the most recent contact
     const mostRecentContactTime = Contact.max('createdAt');
 
-    // Get the creation time of the oldest contact
     const oldestContactTime = Contact.min('createdAt');
 
     Promise.all([contactCount, phoneCount, mostRecentContactTime, oldestContactTime])
