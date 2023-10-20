@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ContactList from './ContactList';
 import ContactDetail from './ContactDetail';
-import AddContact from './AddContact'; // Import this
-import AddPhoneNumber from './AddPhoneNumber'; // And this
+import AddContact from './AddContact'; 
+import AddPhoneNumber from './AddPhoneNumber'; 
 import Statistics from './components/Statistics';
 
 function App() {
@@ -14,8 +14,8 @@ function App() {
                     <Statistics />
                     <Route path="/" exact component={ContactList} />
                     <Route path="/contact/:contactId" component={ContactDetail} />
-                    <Route path="/add-contact" component={AddContact} /> // New route
-                    <Route path="/contact/:contactId/add-phone" component={AddPhoneNumber} /> // New route
+                    <Route path="/add-contact" component={AddContact} /> 
+                    <Route path="/contact/:contactId/add-phone" component={AddPhoneNumber} /> 
                 </Switch>
             </div>
         </Router>
