@@ -1,6 +1,5 @@
 version: "3.8"
 
-#Update the connection among these microservices before starting the container.
 
 services:
   nginx:
