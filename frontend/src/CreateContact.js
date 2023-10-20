@@ -10,7 +10,7 @@ function CreateContact() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name }),
             });
-            setName('');  // Clear the input after successful submission
+            setName(''); 
         } catch (error) {
             console.error('Failed to create contact:', error);
         }
