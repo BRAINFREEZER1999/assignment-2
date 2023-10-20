@@ -25,7 +25,6 @@ exports.create = (req, res) => {
         });
 };
 
-// Get all contacts
 exports.findAll = (req, res) => {
     Contacts.findAll()
         .then(data => {
@@ -80,7 +79,6 @@ exports.update = (req, res) => {
     });
 };
 
-// Delete one contact by ID
 exports.delete = (req, res) => {
     const id = req.params.contactId;
     
