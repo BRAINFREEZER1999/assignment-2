@@ -11,7 +11,7 @@ function Statistics() {
     }
 
     useEffect(() => {
-        fetchStatistics(); // Call the function on component mount
+        fetchStatistics(); 
     }, []);
 
     if (!stats) {
